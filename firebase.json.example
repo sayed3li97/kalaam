@@ -1,0 +1,32 @@
+{
+  "_comment": "TEMPLATE — `flutterfire configure` regenerates firebase.json with YOUR project ids. The real file is git-ignored.",
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "your-project-id",
+          "appId": "1:0000000000:android:0000000000000000000000",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "ios": {
+        "default": {
+          "projectId": "your-project-id",
+          "appId": "1:0000000000:ios:0000000000000000000000",
+          "uploadDebugSymbols": false,
+          "fileOutput": "ios/Runner/GoogleService-Info.plist"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "your-project-id",
+          "configurations": {
+            "android": "1:0000000000:android:0000000000000000000000",
+            "ios": "1:0000000000:ios:0000000000000000000000",
+            "web": "1:0000000000:web:0000000000000000000000"
+          }
+        }
+      }
+    }
+  }
+}

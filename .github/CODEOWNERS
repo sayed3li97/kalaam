@@ -1,0 +1,7 @@
+# Default owners for everything in the repo.
+# Replace with your GitHub org/username before publishing.
+* @OWNER
+
+# The GenUI integration and catalog are the heart of the project.
+/lib/features/session/ @OWNER
+/lib/shared/services/  @OWNER
