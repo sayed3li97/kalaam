@@ -103,6 +103,24 @@ class AiSessionService {
     });
   }
 
+  // --- public conversation API ---------------------------------------------
+  // The view drives the lesson through these, rather than reaching into the
+  // Conversation directly, so all request orchestration lives in one place.
+
+  /// Kick off the lesson with its opening instruction.
+  void start(String openingPrompt) =>
+      conversation.sendRequest(ChatMessage.user(openingPrompt));
+
+  /// Send the learner's free-text message (a question or steer).
+  void sendText(String text) =>
+      conversation.sendRequest(ChatMessage.user(text));
+
+  /// Clear the current error and ask the model to continue.
+  void retry() {
+    lastError.value = null;
+    conversation.sendRequest(ChatMessage.user('Continue the lesson.'));
+  }
+
   static const int _maxRetries = 2;
 
   /// Guards against runaway error loops: if the controller keeps reporting
@@ -188,6 +206,7 @@ class AiSessionService {
         if (responseText.isNotEmpty) {
           _chatHistory.add(Content.model([TextPart(responseText)]));
         }
+        _trimHistory();
         lastError.value = null;
         return;
       } catch (e, st) {
@@ -204,6 +223,16 @@ class AiSessionService {
         }
         await Future<void>.delayed(Duration(seconds: 2 << attempt));
       }
+    }
+  }
+
+  /// Keeps only the most recent turns so a long lesson can't grow the request
+  /// (and token cost) without bound. The system prompt lives in
+  /// `systemInstruction`, not here, so trimming never drops Kalaam's identity.
+  static const int _maxHistory = 24; // ~12 exchanges
+  void _trimHistory() {
+    if (_chatHistory.length > _maxHistory) {
+      _chatHistory.removeRange(0, _chatHistory.length - _maxHistory);
     }
   }
 

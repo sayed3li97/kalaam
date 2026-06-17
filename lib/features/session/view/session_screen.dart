@@ -64,8 +64,7 @@ class _SessionScreenState extends ConsumerState<SessionScreen> {
     final ready = AppConfig.demoMode || ref.read(firebaseReadyProvider);
     if (ready) {
       WidgetsBinding.instance.addPostFrameCallback((_) {
-        final service = ref.read(aiSessionServiceProvider(_sessionKey));
-        service.conversation.sendRequest(ChatMessage.user(_openingPrompt()));
+        ref.read(aiSessionServiceProvider(_sessionKey)).start(_openingPrompt());
       });
     }
   }
@@ -229,12 +228,7 @@ class _SessionScreenState extends ConsumerState<SessionScreen> {
                   if (error == null) return const SizedBox.shrink();
                   return _ErrorBanner(
                     error: error,
-                    onRetry: () {
-                      service.lastError.value = null;
-                      service.conversation.sendRequest(
-                        ChatMessage.user('Continue the lesson.'),
-                      );
-                    },
+                    onRetry: service.retry,
                     onDismiss: () => service.lastError.value = null,
                   );
                 },
@@ -259,7 +253,7 @@ class _SessionScreenState extends ConsumerState<SessionScreen> {
     final text = _inputController.text.trim();
     if (text.isEmpty) return;
     _inputController.clear();
-    service.conversation.sendRequest(ChatMessage.user(text));
+    service.sendText(text);
   }
 }
 
