@@ -40,7 +40,7 @@ class _SessionScreenState extends ConsumerState<SessionScreen> {
   GlobalKey _keyFor(String surfaceId) =>
       _surfaceKeys.putIfAbsent(surfaceId, () => GlobalKey());
 
-  void _locateSurface(String surfaceId) {
+  void _locateSurface(String surfaceId, List<String> surfaces) {
     final ctx = _surfaceKeys[surfaceId]?.currentContext;
     if (ctx != null) {
       Scrollable.ensureVisible(
@@ -49,7 +49,32 @@ class _SessionScreenState extends ConsumerState<SessionScreen> {
         curve: Curves.easeOut,
         alignment: 0.1,
       );
+      return;
     }
+    // The card is scrolled off-screen, so ListView.builder recycled it and its
+    // key has no context. Jump roughly to its position by index to force it to
+    // build, then fine-tune with ensureVisible once it's mounted.
+    if (!_scrollController.hasClients) return;
+    final index = surfaces.indexOf(surfaceId);
+    if (index < 0) return;
+    final max = _scrollController.position.maxScrollExtent;
+    final fraction = surfaces.length <= 1 ? 0.0 : index / (surfaces.length - 1);
+    _scrollController.animateTo(
+      (fraction * max).clamp(0.0, max),
+      duration: 300.ms,
+      curve: Curves.easeOut,
+    );
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      final mounted = _surfaceKeys[surfaceId]?.currentContext;
+      if (mounted != null) {
+        Scrollable.ensureVisible(
+          mounted,
+          duration: 200.ms,
+          curve: Curves.easeOut,
+          alignment: 0.1,
+        );
+      }
+    });
   }
 
   @override
@@ -217,7 +242,7 @@ class _SessionScreenState extends ConsumerState<SessionScreen> {
                   onClose: () => setState(() => _showInspector = false),
                   onTapSurface: (id) {
                     service.flashSurface(id);
-                    _locateSurface(id);
+                    _locateSurface(id, state.surfaces);
                   },
                 ),
 

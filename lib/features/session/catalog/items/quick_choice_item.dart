@@ -122,6 +122,9 @@ class _QuickChoiceWidgetState extends State<_QuickChoiceWidget> {
   // Whether the learner revealed the answer rather than choosing it. Reported
   // to the model in the single Continue dispatch so it can reinforce gently.
   bool _showedAnswer = false;
+  // One-shot guard for the Skip path, which dispatches directly (it has no
+  // self-locking Continue button). Prevents a double-tap from advancing twice.
+  bool _skipped = false;
 
   @override
   void initState() {
@@ -269,14 +272,20 @@ class _QuickChoiceWidgetState extends State<_QuickChoiceWidget> {
                     ),
                   ),
                   TextButton.icon(
-                    onPressed: () {
-                      sendKalaamAction(widget.context, 'answered', {
-                        'selectedId': '',
-                        'correctId': widget.correctId,
-                        'isCorrect': false,
-                        'skipped': true,
-                      });
-                    },
+                    // One-shot: disabled after the first tap so a double-tap
+                    // can't dispatch 'answered' twice and advance the lesson
+                    // twice.
+                    onPressed: _skipped
+                        ? null
+                        : () {
+                            setState(() => _skipped = true);
+                            sendKalaamAction(widget.context, 'answered', {
+                              'selectedId': '',
+                              'correctId': widget.correctId,
+                              'isCorrect': false,
+                              'skipped': true,
+                            });
+                          },
                     icon: const Icon(
                       Icons.skip_next_rounded,
                       size: 16,

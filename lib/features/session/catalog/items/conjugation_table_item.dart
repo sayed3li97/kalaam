@@ -234,18 +234,25 @@ class _Row extends StatelessWidget {
           );
 
           return Expanded(
+            // Overlay the speaker affordance instead of placing it inline, so a
+            // tappable Arabic cell gets the SAME text width as a plain cell
+            // (an inline icon stole ~17px and made these cells ellipsize early).
             child: (!isHeader && isAr && onTapArabic != null)
                 ? GestureDetector(
                     onTap: () => onTapArabic!(cell),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
+                    behavior: HitTestBehavior.opaque,
+                    child: Stack(
+                      alignment: Alignment.center,
                       children: [
-                        Flexible(child: text),
-                        const Gap(4),
-                        Icon(
-                          Icons.volume_up_rounded,
-                          size: 13,
-                          color: KalaamColors.primary.withValues(alpha: 0.6),
+                        text,
+                        Positioned(
+                          bottom: 0,
+                          right: 0,
+                          child: Icon(
+                            Icons.volume_up_rounded,
+                            size: 11,
+                            color: KalaamColors.primary.withValues(alpha: 0.5),
+                          ),
                         ),
                       ],
                     ),

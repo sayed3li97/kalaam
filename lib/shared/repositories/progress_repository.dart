@@ -25,7 +25,12 @@ class ProgressRepository extends _$ProgressRepository {
   }
 
   Future<void> addResult(SessionResult result) async {
-    final current = state.value ?? [];
+    // Await the loaded history before appending. This notifier is auto-dispose,
+    // so on the 2nd+ session it's freshly created and still in its async
+    // build() when addResult runs — reading `state.value ?? []` there would see
+    // null and overwrite every previously saved result. `future` resolves to
+    // the persisted list first, so prior sessions are preserved.
+    final current = await future;
     final updated = [...current, result];
     state = AsyncValue.data(updated);
 
