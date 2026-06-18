@@ -163,7 +163,8 @@ class _SessionScreenState extends ConsumerState<SessionScreen> {
               IconButton(
                 tooltip: 'Live GenUI Inspector',
                 icon: const Icon(Icons.data_object_rounded, size: 20),
-                onPressed: () => setState(() => _showInspector = !_showInspector),
+                onPressed: () =>
+                    setState(() => _showInspector = !_showInspector),
               ),
               _GenUILoopBadge(active: isWaiting),
             ],
@@ -172,14 +173,21 @@ class _SessionScreenState extends ConsumerState<SessionScreen> {
             children: [
               // Duolingo-style Progress Bar
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 20,
+                  vertical: 8,
+                ),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(10),
                   child: LinearProgressIndicator(
-                    value: state.surfaces.isEmpty ? 0.1 : (state.surfaces.length / 5.0).clamp(0.1, 1.0),
+                    value: state.surfaces.isEmpty
+                        ? 0.1
+                        : (state.surfaces.length / 5.0).clamp(0.1, 1.0),
                     minHeight: 16,
                     backgroundColor: KalaamColors.surfaceTrim,
-                    valueColor: const AlwaysStoppedAnimation<Color>(KalaamColors.primary),
+                    valueColor: const AlwaysStoppedAnimation<Color>(
+                      KalaamColors.primary,
+                    ),
                   ),
                 ),
               ),
@@ -196,7 +204,7 @@ class _SessionScreenState extends ConsumerState<SessionScreen> {
                         itemBuilder: (context, index) {
                           final surfaceId = state.surfaces[index];
                           final isOld = index < state.surfaces.length - 1;
-                          
+
                           return Padding(
                             key: _keyFor(surfaceId),
                             padding: const EdgeInsetsDirectional.only(

@@ -331,8 +331,8 @@ class _FamilyNodeState extends State<_FamilyNode> {
     String pos,
     String pattern,
   ) {
-    final double w = expanded ? 150 : 92;
-    final double h = expanded ? 116 : 46;
+    final double w = expanded ? 155 : 92;
+    final double h = expanded ? 144 : 46;
 
     return Positioned(
       left: widget.x - w / 2,
