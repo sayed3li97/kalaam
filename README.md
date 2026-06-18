@@ -20,13 +20,17 @@ what the learner does.
 ---
 
 <div align="center">
-<img src="assets/screenshots/demo.png" alt="A Kalaam lesson composed live by Gemini" width="280"/>
-&nbsp;&nbsp;
-<img src="assets/screenshots/root_explorer.png" alt="Arabic triliteral root explorer" width="280"/>
-&nbsp;&nbsp;
-<img src="assets/screenshots/widgets.png" alt="Custom Arabic teaching widgets" width="280"/>
+<img src="assets/screenshots/demo.png" alt="Home screen — AI scenario picker" width="220"/>
+&nbsp;
+<img src="assets/screenshots/vocab_carousel.png" alt="VocabCarousel — Arabic word with diacritics" width="220"/>
+&nbsp;
+<img src="assets/screenshots/root_explorer.png" alt="RootExplorer — Arabic triliteral root radial diagram" width="220"/>
+&nbsp;
+<img src="assets/screenshots/widgets.png" alt="QuickChoice — interactive quiz widget" width="220"/>
+</div>
 
-*Left: a live Gemini-composed lesson · Centre: the root explorer · Right: custom Arabic widgets*
+<div align="center">
+<sub>Scenario picker &nbsp;·&nbsp; VocabCarousel (قَهْوَة) &nbsp;·&nbsp; Root Explorer (ش-ر-ب) &nbsp;·&nbsp; QuickChoice quiz — all composed live by Gemini</sub>
 </div>
 
 ---

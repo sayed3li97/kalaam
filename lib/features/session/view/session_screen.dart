@@ -160,7 +160,11 @@ class _SessionScreenState extends ConsumerState<SessionScreen> {
             backgroundColor: KalaamColors.surface,
             elevation: 0,
             actions: [
-
+              IconButton(
+                tooltip: 'Live GenUI Inspector',
+                icon: const Icon(Icons.data_object_rounded, size: 20),
+                onPressed: () => setState(() => _showInspector = !_showInspector),
+              ),
               _GenUILoopBadge(active: isWaiting),
             ],
           ),
