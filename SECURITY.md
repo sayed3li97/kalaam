@@ -6,7 +6,7 @@ Please report security issues **privately** — do not open a public issue.
 
 - Use GitHub's **[Private vulnerability reporting](https://docs.github.com/en/code-security/security-advisories/guidance-on-reporting-and-writing-information-about-vulnerabilities/privately-reporting-a-security-vulnerability)**
   (Security tab → "Report a vulnerability"), or
-- email the maintainers at `security@example.com` *(replace with a real address)*.
+- email the maintainers at `alkamelsayedali@gmail.com`.
 
 We aim to acknowledge within 72 hours.
 

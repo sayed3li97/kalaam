@@ -164,6 +164,7 @@ class _SentenceBuilderWidgetState extends State<_SentenceBuilderWidget> {
                           ),
                         )
                       : Wrap(
+                          textDirection: TextDirection.rtl,
                           spacing: 8,
                           runSpacing: 8,
                           children: _selectedTiles.map((tile) {
@@ -202,6 +203,7 @@ class _SentenceBuilderWidgetState extends State<_SentenceBuilderWidget> {
             // Tray Zone
             if (!widget.isCorrect) ...[
               Wrap(
+                textDirection: TextDirection.rtl,
                 spacing: 8,
                 runSpacing: 8,
                 alignment: WrapAlignment.center,

@@ -87,9 +87,11 @@ class KalaamApp extends ConsumerWidget {
       theme: KalaamTheme.dark,
       themeMode: ThemeMode.dark,
       routerConfig: ref.watch(routerProvider),
-      // Arabic-first → right-to-left across the whole app.
-      locale: const Locale('ar'),
-      supportedLocales: const [Locale('ar'), Locale('en')],
+      // LTR app chrome (English UI). Arabic content still renders right-to-left
+      // within its own widgets (the HarakatBuilder / FillInTheBlank wrap their
+      // Arabic in a local Directionality.rtl) — only the global mirroring is off.
+      locale: const Locale('en'),
+      supportedLocales: const [Locale('en'), Locale('ar')],
       localizationsDelegates: const [
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,

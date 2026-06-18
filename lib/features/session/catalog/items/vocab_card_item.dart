@@ -161,6 +161,7 @@ class _VocabCardFlipWidgetState extends State<_VocabCardFlipWidget> {
                     key: const ValueKey('back'),
                     child: Container(
                       height: 200,
+                      width: double.infinity,
                       padding: const EdgeInsetsDirectional.all(20),
                       decoration: BoxDecoration(
                         color: KalaamColors.surfaceVar,
@@ -206,6 +207,7 @@ class _VocabCardFlipWidgetState extends State<_VocabCardFlipWidget> {
                     key: const ValueKey('front'),
                     child: Container(
                       height: 200,
+                      width: double.infinity,
                       padding: const EdgeInsetsDirectional.all(20),
                       decoration: BoxDecoration(
                         color: KalaamColors.surfaceVar,

@@ -4,6 +4,7 @@ import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 import 'package:kalaam/core/constants/scenarios.dart';
 import 'package:kalaam/shared/models/scenario.dart';
+import 'package:kalaam/shared/widgets/duo_button.dart';
 import 'package:kalaam/theme.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -44,43 +45,34 @@ class _HomeScreenState extends State<HomeScreen> {
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
-            expandedHeight: 180,
+            expandedHeight: 80,
             pinned: true,
             backgroundColor: KalaamColors.surface,
-            flexibleSpace: FlexibleSpaceBar(
-              titlePadding: const EdgeInsetsDirectional.only(
-                start: 24,
-                bottom: 16,
-              ),
-              title: Text(
-                'Kalaam كلام',
-                style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                  color: KalaamColors.primary,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              background: const DecoratedBox(
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [KalaamColors.surface, KalaamColors.surfaceVar],
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                  ),
-                ),
-                child: Center(
-                  child: Opacity(
-                    opacity: 0.05,
-                    child: Text(
-                      'العربية',
-                      style: TextStyle(
-                        fontFamily: 'Amiri',
-                        fontSize: 120,
-                        color: KalaamColors.onSurface,
-                      ),
+            elevation: 0,
+            title: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Icon(Icons.language_rounded, color: KalaamColors.primary, size: 32),
+                Row(
+                  children: [
+                    Row(
+                      children: [
+                        const Text('🔥', style: TextStyle(fontSize: 20)),
+                        const Gap(4),
+                        Text('12', style: Theme.of(context).textTheme.titleMedium?.copyWith(color: Colors.orange, fontWeight: FontWeight.bold)),
+                      ],
                     ),
-                  ),
+                    const Gap(16),
+                    Row(
+                      children: [
+                        const Text('❤️', style: TextStyle(fontSize: 20)),
+                        const Gap(4),
+                        Text('5', style: Theme.of(context).textTheme.titleMedium?.copyWith(color: KalaamColors.error, fontWeight: FontWeight.bold)),
+                      ],
+                    ),
+                  ],
                 ),
-              ),
+              ],
             ),
           ),
           SliverPadding(
@@ -96,7 +88,7 @@ class _HomeScreenState extends State<HomeScreen> {
             padding: EdgeInsetsDirectional.fromSTEB(24, 16, 24, 8),
             sliver: SliverToBoxAdapter(
               child: Text(
-                'Or start from a scene',
+                'Or choose a real-world scenario',
                 style: TextStyle(
                   fontFamily: 'IBMPlexSansArabic',
                   fontSize: 18,
@@ -182,7 +174,7 @@ class _GoalStarter extends StatelessWidget {
           ),
           const Gap(4),
           Text(
-            'Tell Kalaam what you want — Gemini composes the whole lesson live.',
+            'Tell Kalaam what you want to learn — your AI tutor will create a custom lesson just for you.',
             style: Theme.of(context).textTheme.bodySmall,
           ),
           const Gap(14),
@@ -198,17 +190,18 @@ class _GoalStarter extends StatelessWidget {
           const Gap(12),
           SizedBox(
             width: double.infinity,
-            child: ElevatedButton.icon(
+            child: DuoButton(
               onPressed: onStart,
-              icon: const Icon(Icons.school_rounded, size: 18),
-              label: const Text('Teach me'),
-              style: ElevatedButton.styleFrom(
-                backgroundColor: KalaamColors.primary,
-                foregroundColor: KalaamColors.onPrimary,
-                padding: const EdgeInsetsDirectional.symmetric(vertical: 14),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12),
-                ),
+              color: KalaamColors.primary,
+              shadowColor: KalaamColors.primaryDim,
+              padding: const EdgeInsetsDirectional.symmetric(vertical: 14),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Icon(Icons.school_rounded, size: 18, color: Colors.white),
+                  const Gap(8),
+                  const Text('Start Learning', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+                ],
               ),
             ),
           ),
@@ -232,39 +225,37 @@ class _ScenarioCard extends StatelessWidget {
       _ => KalaamColors.success,
     };
 
-    return Card(
-      clipBehavior: Clip.antiAlias,
-      child: InkWell(
-        onTap: onTap,
+    return DuoButton(
+      onPressed: onTap,
+      color: KalaamColors.surfaceVar,
+      shadowColor: KalaamColors.surfaceTrim,
+      padding: EdgeInsets.zero,
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
-          mainAxisSize: MainAxisSize.min,
           children: [
-            // Fixed height emoji header
-            Container(
-              height: 110,
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [
-                    KalaamColors.primaryDim.withValues(alpha: 0.40),
-                    KalaamColors.secondary.withValues(alpha: 0.40),
-                  ],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
+            // Flexible height emoji header
+            Expanded(
+              flex: 5,
+              child: Container(
+                decoration: const BoxDecoration(
+                  color: KalaamColors.surfaceTrim,
                 ),
-              ),
-              child: Center(
-                child: Text(
-                  scenario.emoji,
-                  style: const TextStyle(fontSize: 36),
+                child: Center(
+                  child: Text(
+                    scenario.emoji,
+                    style: const TextStyle(fontSize: 48),
+                  ),
                 ),
               ),
             ),
-            // Fixed height text section (no Expanded to prevent unbounded constraints)
-            Container(
-              height: 100,
-              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
-              color: KalaamColors.surfaceTrim,
+            // Flexible height text section
+            Expanded(
+              flex: 6,
+              child: Container(
+                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+              color: KalaamColors.surfaceVar,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -303,9 +294,10 @@ class _ScenarioCard extends StatelessWidget {
                     ),
                     decoration: BoxDecoration(
                       color: chipColor.withValues(alpha: 0.2),
-                      borderRadius: BorderRadius.circular(6),
+                      borderRadius: BorderRadius.circular(8),
                       border: Border.all(
                         color: chipColor.withValues(alpha: 0.5),
+                        width: 2,
                       ),
                     ),
                     child: Text(
@@ -319,6 +311,7 @@ class _ScenarioCard extends StatelessWidget {
                   ),
                 ],
               ),
+            ),
             ),
           ],
         ),

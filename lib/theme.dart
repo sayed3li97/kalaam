@@ -1,19 +1,17 @@
 import 'package:flutter/material.dart';
 
 abstract final class KalaamColors {
-  static const surface = Color(0xFF0D0F14);
-  static const surfaceVar = Color(0xFF161A22);
-  static const surfaceTrim = Color(0xFF1E2330);
-  static const primary = Color(0xFFC9943A);
-  static const primaryDim = Color(0xFF8A6220);
-  // Brightened from #3A7D8C for legible contrast on the dark surface (the old
-  // teal failed WCAG AA for small text/icons).
-  static const secondary = Color(0xFF5AA6B5);
-  static const onPrimary = Color(0xFF0D0F14);
-  static const onSurface = Color(0xFFEAE6DC);
-  static const onSurfaceDim = Color(0xFF9B9590);
-  static const error = Color(0xFFE05A5A);
-  static const success = Color(0xFF4CAF7D);
+  static const surface = Color(0xFF131F24); // Deep slate blue-ish dark background
+  static const surfaceVar = Color(0xFF202F36);
+  static const surfaceTrim = Color(0xFF2D3C43);
+  static const primary = Color(0xFF58CC02); // Duolingo Green
+  static const primaryDim = Color(0xFF58A700); // Darker Green for 3D bottoms
+  static const secondary = Color(0xFF1CB0F6); // Duolingo Blue
+  static const onPrimary = Color(0xFFFFFFFF);
+  static const onSurface = Color(0xFFFFFFFF);
+  static const onSurfaceDim = Color(0xFFAFB8BD);
+  static const error = Color(0xFFFF4B4B); // Duolingo Red
+  static const success = Color(0xFF58CC02);
 }
 
 abstract final class KalaamTheme {
@@ -86,19 +84,19 @@ abstract final class KalaamTheme {
       elevation: 0,
       margin: EdgeInsets.zero,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.all(Radius.circular(16)),
+        borderRadius: BorderRadius.all(Radius.circular(24)), // More rounded
       ),
     ),
     inputDecorationTheme: const InputDecorationTheme(
       filled: true,
       fillColor: KalaamColors.surfaceTrim,
       border: OutlineInputBorder(
-        borderRadius: BorderRadius.all(Radius.circular(12)),
+        borderRadius: BorderRadius.all(Radius.circular(20)), // More rounded
         borderSide: BorderSide.none,
       ),
       contentPadding: EdgeInsetsDirectional.symmetric(
-        horizontal: 16,
-        vertical: 14,
+        horizontal: 20,
+        vertical: 16,
       ),
     ),
     chipTheme: const ChipThemeData(

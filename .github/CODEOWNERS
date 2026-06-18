@@ -1,7 +1,6 @@
 # Default owners for everything in the repo.
-# Replace with your GitHub org/username before publishing.
-* @OWNER
+* @sayed3li97
 
 # The GenUI integration and catalog are the heart of the project.
-/lib/features/session/ @OWNER
-/lib/shared/services/  @OWNER
+/lib/features/session/ @sayed3li97
+/lib/shared/services/  @sayed3li97

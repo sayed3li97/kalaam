@@ -3,6 +3,7 @@ import 'package:gap/gap.dart';
 import 'package:genui/genui.dart';
 
 import 'package:kalaam/theme.dart';
+import 'package:kalaam/shared/widgets/duo_button.dart';
 
 /// Bridges a user interaction back to the AI (or the offline demo script).
 ///
@@ -90,19 +91,25 @@ class _KalaamContinueButtonState extends State<KalaamContinueButton> {
                 ),
               ],
             )
-          : OutlinedButton.icon(
+          : DuoButton(
               onPressed: _onPressed,
-              icon: Icon(widget.icon, size: 18),
-              label: Text(widget.label),
-              style: OutlinedButton.styleFrom(
-                foregroundColor: KalaamColors.primary,
-                side: BorderSide(
-                  color: KalaamColors.primary.withValues(alpha: 0.5),
-                ),
-                padding: const EdgeInsetsDirectional.symmetric(vertical: 12),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12),
-                ),
+              color: KalaamColors.primary,
+              shadowColor: KalaamColors.primaryDim,
+              padding: const EdgeInsetsDirectional.symmetric(vertical: 14),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(widget.icon, size: 18, color: Colors.white),
+                  const Gap(8),
+                  Text(
+                    widget.label,
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                    ),
+                  ),
+                ],
               ),
             ),
     );

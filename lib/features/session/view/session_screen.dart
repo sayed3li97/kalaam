@@ -160,22 +160,25 @@ class _SessionScreenState extends ConsumerState<SessionScreen> {
             backgroundColor: KalaamColors.surface,
             elevation: 0,
             actions: [
-              IconButton(
-                tooltip: 'Watch the AI compose the UI',
-                icon: Icon(
-                  Icons.code_rounded,
-                  color: _showInspector
-                      ? KalaamColors.primary
-                      : KalaamColors.onSurfaceDim,
-                ),
-                onPressed: () =>
-                    setState(() => _showInspector = !_showInspector),
-              ),
+
               _GenUILoopBadge(active: isWaiting),
             ],
           ),
           body: Column(
             children: [
+              // Duolingo-style Progress Bar
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(10),
+                  child: LinearProgressIndicator(
+                    value: state.surfaces.isEmpty ? 0.1 : (state.surfaces.length / 5.0).clamp(0.1, 1.0),
+                    minHeight: 16,
+                    backgroundColor: KalaamColors.surfaceTrim,
+                    valueColor: const AlwaysStoppedAnimation<Color>(KalaamColors.primary),
+                  ),
+                ),
+              ),
               Expanded(
                 child: state.surfaces.isEmpty && isWaiting
                     ? const _ComposingFirst()
@@ -188,6 +191,8 @@ class _SessionScreenState extends ConsumerState<SessionScreen> {
                         itemCount: state.surfaces.length,
                         itemBuilder: (context, index) {
                           final surfaceId = state.surfaces[index];
+                          final isOld = index < state.surfaces.length - 1;
+                          
                           return Padding(
                             key: _keyFor(surfaceId),
                             padding: const EdgeInsetsDirectional.only(
@@ -199,9 +204,15 @@ class _SessionScreenState extends ConsumerState<SessionScreen> {
                               // pulsing badge / flash animation doesn't repaint
                               // the whole stacked list.
                               child: RepaintBoundary(
-                                child: Surface(
-                                  surfaceContext: service.surfaceController
-                                      .contextFor(surfaceId),
+                                child: IgnorePointer(
+                                  ignoring: isOld,
+                                  child: Opacity(
+                                    opacity: isOld ? 0.4 : 1.0,
+                                    child: Surface(
+                                      surfaceContext: service.surfaceController
+                                          .contextFor(surfaceId),
+                                    ),
+                                  ),
                                 ),
                               ),
                               builder: (context, highlighted, child) {
@@ -294,7 +305,7 @@ class _ComposingFirst extends StatelessWidget {
           const CircularProgressIndicator(color: KalaamColors.primary),
           const Gap(16),
           Text(
-            'Kalaam is composing your lesson…',
+            'Creating your personalized lesson...',
             style: Theme.of(context).textTheme.bodySmall,
           ),
         ],
@@ -368,7 +379,7 @@ class _InputBar extends StatelessWidget {
                   textInputAction: TextInputAction.send,
                   onSubmitted: enabled ? (_) => onSend() : null,
                   decoration: const InputDecoration(
-                    hintText: 'Ask, answer, or steer the lesson…',
+                    hintText: 'Type your message in English or Arabic...',
                     hintStyle: TextStyle(fontSize: 14),
                   ),
                 ),
@@ -506,31 +517,9 @@ class _FirebaseUnavailable extends StatelessWidget {
               ),
               const Gap(12),
               Text(
-                'Kalaam couldn’t reach Firebase AI Logic, so it can’t compose a '
-                'live lesson. Configure Firebase with `flutterfire configure`, '
-                'or relaunch in Demo Mode to explore offline:',
+                'We couldn’t connect to your AI tutor right now. Please check your internet connection and try again.',
                 textAlign: TextAlign.center,
                 style: Theme.of(context).textTheme.bodySmall,
-              ),
-              const Gap(12),
-              Container(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 14,
-                  vertical: 10,
-                ),
-                decoration: BoxDecoration(
-                  color: KalaamColors.surfaceVar,
-                  borderRadius: BorderRadius.circular(10),
-                  border: Border.all(color: KalaamColors.surfaceTrim),
-                ),
-                child: const Text(
-                  'flutter run --dart-define=KALAAM_DEMO=true',
-                  style: TextStyle(
-                    fontFamily: 'IBMPlexMono',
-                    fontSize: 12,
-                    color: KalaamColors.primary,
-                  ),
-                ),
               ),
               const Gap(28),
               ElevatedButton(
