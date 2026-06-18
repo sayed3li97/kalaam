@@ -20,17 +20,27 @@ what the learner does.
 ---
 
 <div align="center">
-<img src="assets/screenshots/demo.png" alt="Home screen — AI scenario picker" width="220"/>
-&nbsp;
-<img src="assets/screenshots/vocab_carousel.png" alt="VocabCarousel — Arabic word with diacritics" width="220"/>
-&nbsp;
-<img src="assets/screenshots/root_explorer.png" alt="RootExplorer — Arabic triliteral root radial diagram" width="220"/>
-&nbsp;
-<img src="assets/screenshots/widgets.png" alt="QuickChoice — interactive quiz widget" width="220"/>
+<img src="assets/screenshots/demo.png" alt="Home screen — AI scenario picker" width="200"/>
+&nbsp;&nbsp;
+<img src="assets/screenshots/root_explorer.png" alt="Root System — Arabic triliteral root radial diagram (ش-ر-ب)" width="200"/>
+&nbsp;&nbsp;
+<img src="assets/screenshots/root_expanded.png" alt="Tap a node — wazn pattern badge + Explore button expand" width="200"/>
 </div>
 
 <div align="center">
-<sub>Scenario picker &nbsp;·&nbsp; VocabCarousel (قَهْوَة) &nbsp;·&nbsp; Root Explorer (ش-ر-ب) &nbsp;·&nbsp; QuickChoice quiz — all composed live by Gemini</sub>
+<sub>Scenario picker &nbsp;·&nbsp; Root System diagram (ش-ر-ب) &nbsp;·&nbsp; Tap a node → morphological pattern (وزن) + Explore→</sub>
+</div>
+
+<br/>
+
+<div align="center">
+<img src="assets/screenshots/inspector.png" alt="Live GenUI Inspector — A2UI JSON stream from Gemini" width="200"/>
+&nbsp;&nbsp;
+<img src="assets/screenshots/vocab_carousel.png" alt="VocabCarousel — Arabic word with full diacritics" width="200"/>
+</div>
+
+<div align="center">
+<sub>Live GenUI Inspector (watch Gemini compose the UI in real time) &nbsp;·&nbsp; VocabCarousel with full diacritics</sub>
 </div>
 
 ---

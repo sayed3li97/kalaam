@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 abstract final class KalaamColors {
-  static const surface = Color(0xFF131F24); // Deep slate blue-ish dark background
+  static const surface = Color(
+    0xFF131F24,
+  ); // Deep slate blue-ish dark background
   static const surfaceVar = Color(0xFF202F36);
   static const surfaceTrim = Color(0xFF2D3C43);
   static const primary = Color(0xFF58CC02); // Duolingo Green

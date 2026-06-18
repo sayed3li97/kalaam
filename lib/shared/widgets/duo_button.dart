@@ -45,7 +45,10 @@ class _DuoButtonState extends State<DuoButton> {
       },
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 100),
-        margin: EdgeInsets.only(top: _isPressed ? 4 : 0, bottom: _isPressed ? 0 : 4),
+        margin: EdgeInsets.only(
+          top: _isPressed ? 4 : 0,
+          bottom: _isPressed ? 0 : 4,
+        ),
         decoration: BoxDecoration(
           color: widget.color,
           borderRadius: BorderRadius.circular(16),

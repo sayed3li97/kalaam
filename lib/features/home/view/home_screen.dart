@@ -52,14 +52,25 @@ class _HomeScreenState extends State<HomeScreen> {
             title: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Icon(Icons.language_rounded, color: KalaamColors.primary, size: 32),
+                const Icon(
+                  Icons.language_rounded,
+                  color: KalaamColors.primary,
+                  size: 32,
+                ),
                 Row(
                   children: [
                     Row(
                       children: [
                         const Text('🔥', style: TextStyle(fontSize: 20)),
                         const Gap(4),
-                        Text('12', style: Theme.of(context).textTheme.titleMedium?.copyWith(color: Colors.orange, fontWeight: FontWeight.bold)),
+                        Text(
+                          '12',
+                          style: Theme.of(context).textTheme.titleMedium
+                              ?.copyWith(
+                                color: Colors.orange,
+                                fontWeight: FontWeight.bold,
+                              ),
+                        ),
                       ],
                     ),
                     const Gap(16),
@@ -67,7 +78,14 @@ class _HomeScreenState extends State<HomeScreen> {
                       children: [
                         const Text('❤️', style: TextStyle(fontSize: 20)),
                         const Gap(4),
-                        Text('5', style: Theme.of(context).textTheme.titleMedium?.copyWith(color: KalaamColors.error, fontWeight: FontWeight.bold)),
+                        Text(
+                          '5',
+                          style: Theme.of(context).textTheme.titleMedium
+                              ?.copyWith(
+                                color: KalaamColors.error,
+                                fontWeight: FontWeight.bold,
+                              ),
+                        ),
                       ],
                     ),
                   ],
@@ -198,9 +216,19 @@ class _GoalStarter extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Icon(Icons.school_rounded, size: 18, color: Colors.white),
+                  const Icon(
+                    Icons.school_rounded,
+                    size: 18,
+                    color: Colors.white,
+                  ),
                   const Gap(8),
-                  const Text('Start Learning', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+                  const Text(
+                    'Start Learning',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -254,64 +282,67 @@ class _ScenarioCard extends StatelessWidget {
             Expanded(
               flex: 6,
               child: Container(
-                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
-              color: KalaamColors.surfaceVar,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        scenario.title,
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                        style: const TextStyle(
-                          fontFamily: 'IBMPlexSansArabic',
-                          fontSize: 14,
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 12,
+                  vertical: 10,
+                ),
+                color: KalaamColors.surfaceVar,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          scenario.title,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: const TextStyle(
+                            fontFamily: 'IBMPlexSansArabic',
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          ),
+                        ),
+                        const Gap(2),
+                        Text(
+                          scenario.description,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: const TextStyle(
+                            fontFamily: 'IBMPlexSansArabic',
+                            fontSize: 11,
+                            color: Colors.white70,
+                          ),
+                        ),
+                      ],
+                    ),
+                    Container(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 8,
+                        vertical: 2,
+                      ),
+                      decoration: BoxDecoration(
+                        color: chipColor.withValues(alpha: 0.2),
+                        borderRadius: BorderRadius.circular(8),
+                        border: Border.all(
+                          color: chipColor.withValues(alpha: 0.5),
+                          width: 2,
+                        ),
+                      ),
+                      child: Text(
+                        scenario.difficulty,
+                        style: TextStyle(
+                          color: chipColor,
+                          fontSize: 9,
                           fontWeight: FontWeight.bold,
-                          color: Colors.white,
                         ),
                       ),
-                      const Gap(2),
-                      Text(
-                        scenario.description,
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                        style: const TextStyle(
-                          fontFamily: 'IBMPlexSansArabic',
-                          fontSize: 11,
-                          color: Colors.white70,
-                        ),
-                      ),
-                    ],
-                  ),
-                  Container(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 8,
-                      vertical: 2,
                     ),
-                    decoration: BoxDecoration(
-                      color: chipColor.withValues(alpha: 0.2),
-                      borderRadius: BorderRadius.circular(8),
-                      border: Border.all(
-                        color: chipColor.withValues(alpha: 0.5),
-                        width: 2,
-                      ),
-                    ),
-                    child: Text(
-                      scenario.difficulty,
-                      style: TextStyle(
-                        color: chipColor,
-                        fontSize: 9,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
             ),
           ],
         ),
