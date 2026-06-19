@@ -4,14 +4,14 @@ published: true
 description: "Step-by-step beginner tutorial: build real-time AI-generated Flutter widget trees using the GenUI SDK, Gemini, and custom CatalogItems. No prior AI experience needed."
 tags: flutter, dart, beginners, ai
 series: Flutter GenUI SDK
-cover_image: https://raw.githubusercontent.com/sayed3li97/kalaam/feat/screenshots-v2/assets/screenshots/tutorial_cover.png
+cover_image: https://raw.githubusercontent.com/sayed3li97/kalaam/main/assets/screenshots/tutorial_cover.png
 ---
 
 Picture this. You open a language learning app. A Gemini model reads that you have been struggling with Arabic verb conjugation, and in under two seconds it assembles a bespoke lesson: a cultural scene-setter card, a triliteral root diagram showing every word in the family, a drag-and-drop vowel placement exercise, then a conjugation table. None of those screens were pre-designed. No developer wired them together for this session. The interface was composed at runtime, by the model itself, for you.
 
 That app is [Kalaam · كلام](https://github.com/sayed3li97/kalaam), and the technology making it possible is the **Flutter GenUI SDK**.
 
-![Kalaam home screen — type a learning goal or pick a real-world Arabic scenario](https://raw.githubusercontent.com/sayed3li97/kalaam/feat/screenshots-v2/assets/screenshots/gif_home.gif)
+![Kalaam home screen — type a learning goal or pick a real-world Arabic scenario](https://raw.githubusercontent.com/sayed3li97/kalaam/main/assets/screenshots/gif_home.gif)
 _Kalaam's home screen: type any learning goal ("bargaining in a Cairo market"), or pick a pre-built real-world scenario. The rest — every widget, every step — is assembled live by Gemini._
 
 This tutorial is your complete beginner's guide to building exactly this kind of app. By the end you will understand the five core concepts behind GenUI, you will have written your first custom widget the model can compose, and you will have a working open-source reference — Kalaam's full codebase — to study whenever you need to go deeper.
@@ -36,7 +36,7 @@ Here is the key insight that most explanations miss: **the SDK does not call Gem
 
 The AI writes the layout spec. The SDK renders it. You write the widgets.
 
-![Live GenUI Inspector — watch Gemini compose the Flutter widget tree token by token](https://raw.githubusercontent.com/sayed3li97/kalaam/feat/screenshots-v2/assets/screenshots/gif_inspector.gif)
+![Live GenUI Inspector — watch Gemini compose the Flutter widget tree token by token](https://raw.githubusercontent.com/sayed3li97/kalaam/main/assets/screenshots/gif_inspector.gif)
 _Tap the `{}` button and watch Gemini write your UI in real time. Every field in that JSON panel became a widget on screen above it._
 
 > **Alpha warning:** GenUI is marked "highly experimental" by the Flutter team. Pin to `^0.9.2` (not `any`) in your `pubspec.yaml` and subscribe to the [CHANGELOG on GitHub](https://github.com/flutter/genui/blob/main/CHANGELOG.md). APIs will change between minor versions. Build something real with it today, but expect to update call sites when new versions land.
@@ -113,7 +113,7 @@ When your app sends a message to Gemini, the model does not respond with plain t
 
 Those four messages are everything GenUI understands. The SDK's job is to listen to Gemini's stream, parse these messages as tokens arrive (before the full response is complete), and apply them to the widget tree. Now that you know what is happening at the wire level, every class in the SDK makes immediate sense.
 
-![Kalaam's Live GenUI Inspector showing a CREATE turn_2 message with full A2UI JSON](https://raw.githubusercontent.com/sayed3li97/kalaam/feat/screenshots-v2/assets/screenshots/inspector.png)
+![Kalaam's Live GenUI Inspector showing a CREATE turn_2 message with full A2UI JSON](https://raw.githubusercontent.com/sayed3li97/kalaam/main/assets/screenshots/inspector.png)
 _Kalaam's Live Inspector mid-lesson. The `CREATE turn_2` badge on the left is a `createSurface` message. The fields below it — `"version": "v0.9"`, `"surfaceId": "turn_2"` — are the start of the Root Explorer component JSON. The Root Explorer you see rendered above the panel is what those fields became._
 
 ---
@@ -298,7 +298,7 @@ Three things are happening here, and all three matter.
 
 Here is what a real `CatalogItem` looks like rendered — Kalaam's Root System Explorer, generated from a single `RootExplorer` component in a `createSurface` message:
 
-![Root System Explorer — all nodes collapsed, ش-ر-ب root with five derived words radiating outward](https://raw.githubusercontent.com/sayed3li97/kalaam/feat/screenshots-v2/assets/screenshots/root_explorer.png)
+![Root System Explorer — all nodes collapsed, ش-ر-ب root with five derived words radiating outward](https://raw.githubusercontent.com/sayed3li97/kalaam/main/assets/screenshots/root_explorer.png)
 _Every node, connector line, and label comes from the JSON Gemini provided in the `createSurface` message. The `widgetBuilder` turns that JSON into this radial diagram._
 
 ### 2. Catalog — Grouping Your CatalogItems
@@ -382,7 +382,7 @@ await conversation.sendRequest(Content.user('teach me the root ك-ت-ب'));
 
 Here is what the finished app looks like: a Gemini-composed lesson flowing from a vocab carousel through the Root System Explorer, with the QuickChoice quiz at the end.
 
-![Full Kalaam session flow — home screen to vocab carousel to Root Explorer to quiz, all UI composed by Gemini at runtime](https://raw.githubusercontent.com/sayed3li97/kalaam/feat/screenshots-v2/assets/screenshots/gif_session_flow.gif)
+![Full Kalaam session flow — home screen to vocab carousel to Root Explorer to quiz, all UI composed by Gemini at runtime](https://raw.githubusercontent.com/sayed3li97/kalaam/main/assets/screenshots/gif_session_flow.gif)
 _Home screen → Begin lesson → VocabCarousel → Root System Explorer → QuickChoice quiz. None of these transitions were pre-wired — Gemini assembled them from the catalog._
 
 Let's put all five concepts together. This is a minimal, complete, runnable example.
@@ -635,7 +635,7 @@ The full 498-line implementation lives at [`lib/features/session/catalog/items/r
 
 Here is that same widget with a node tapped — the `isExpanded` DataModel path flipped to `true`, revealing the وزن pattern badge and Explore button without any surface rebuild:
 
-![Root System Explorer node expanded — showing وزن مَفْعُول badge and Explore arrow button](https://raw.githubusercontent.com/sayed3li97/kalaam/feat/screenshots-v2/assets/screenshots/gif_node_expand.gif)
+![Root System Explorer node expanded — showing وزن مَفْعُول badge and Explore arrow button](https://raw.githubusercontent.com/sayed3li97/kalaam/main/assets/screenshots/gif_node_expand.gif)
 _Tapping مَشْرُوب expands it to reveal its morphological pattern (وزن مَفْعُول) and an Explore→ button that asks Gemini to branch deeper into that word. The animation is an `AnimatedContainer` reacting to local state — no GenUI rebuild needed._
 
 ---
@@ -700,7 +700,7 @@ if (selectedIdRef is Map && selectedIdRef.containsKey('path')) {
 
 This pattern — Gemini setting a path, a widget binding to it, and the widget reacting without any app-level `setState` — is the cleanest way to handle interactive state in GenUI apps. Kalaam uses it for quiz selection, mastery ring progress, and the expanded/collapsed state of each node in the Root Explorer.
 
-![Root Explorer expanded node — isExpanded DataModel path flipped to true, revealing وزن badge](https://raw.githubusercontent.com/sayed3li97/kalaam/feat/screenshots-v2/assets/screenshots/root_expanded.png)
+![Root Explorer expanded node — isExpanded DataModel path flipped to true, revealing وزن badge](https://raw.githubusercontent.com/sayed3li97/kalaam/main/assets/screenshots/root_expanded.png)
 _The expanded state is a DataModel-bound `BoundBool`. Gemini can expand or collapse any node mid-lesson by sending a `dataModelUpdate` — without touching the surface or rebuilding any other widget._
 
 ---
@@ -749,7 +749,7 @@ The event name (`'explore_word'`) is a contract. You define it in your system pr
 
 Here is `UserActionEvent` in practice — the `QuickChoice` quiz widget dispatching a correct or incorrect answer, which causes Gemini to generate the next lesson surface:
 
-![QuickChoice quiz interaction — incorrect answer highlights red, correct answer highlights green, explanation appears below](https://raw.githubusercontent.com/sayed3li97/kalaam/feat/screenshots-v2/assets/screenshots/gif_quiz_interaction.gif)
+![QuickChoice quiz interaction — incorrect answer highlights red, correct answer highlights green, explanation appears below](https://raw.githubusercontent.com/sayed3li97/kalaam/main/assets/screenshots/gif_quiz_interaction.gif)
 _Tap "Tea" → red highlight (wrong). Correct answer "Coffee" turns green immediately. Gemini receives `{isCorrect: false}` and tailors the next turn._
 
 ---
@@ -794,7 +794,7 @@ This pattern has a purpose beyond debugging: it makes the GenUI data flow visibl
 
 Full implementation at [`lib/features/session/view/widgets/genui_inspector.dart`](https://github.com/sayed3li97/kalaam/blob/main/lib/features/session/view/widgets/genui_inspector.dart).
 
-![Live GenUI Inspector streaming — CREATE turn_2 badge appearing as Gemini assembles the Root Explorer widget](https://raw.githubusercontent.com/sayed3li97/kalaam/feat/screenshots-v2/assets/screenshots/gif_inspector_stream2.gif)
+![Live GenUI Inspector streaming — CREATE turn_2 badge appearing as Gemini assembles the Root Explorer widget](https://raw.githubusercontent.com/sayed3li97/kalaam/main/assets/screenshots/gif_inspector_stream2.gif)
 _The Inspector streaming A2UI JSON alongside the live lesson. The `CREATE turn_2` badge marks the Root Explorer surface. Every field you see was streamed token by token from Gemini._
 
 ---
@@ -861,7 +861,7 @@ Everything covered in this tutorial appears at production scale in [Kalaam · ك
 | Demo Mode (no credentials) | `lib/features/session/demo/kalaam_demo.dart` |
 | Architecture overview | `docs/ARCHITECTURE.md` |
 
-![Kalaam widget catalog — VocabCarousel showing full Arabic diacritics with IPA and English](https://raw.githubusercontent.com/sayed3li97/kalaam/feat/screenshots-v2/assets/screenshots/vocab_carousel.png)
+![Kalaam widget catalog — VocabCarousel showing full Arabic diacritics with IPA and English](https://raw.githubusercontent.com/sayed3li97/kalaam/main/assets/screenshots/vocab_carousel.png)
 _One of Kalaam's 13 custom `CatalogItem`s: the `VocabCarousel`. Gemini picks which words go in the deck, the widget renders them with full diacritics, transliteration, and example sentences._
 
 Clone it, run it in Demo Mode (`flutter run --dart-define=KALAAM_DEMO=true`), and open the Live GenUI Inspector. Watch the A2UI JSON stream as you interact with the lesson. That transparency is intentional — Kalaam was built to make the GenUI programming model concrete.
