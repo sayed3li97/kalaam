@@ -1,0 +1,287 @@
+<svg viewBox="0 0 1000 420" width="1000" height="420" xmlns="http://www.w3.org/2000/svg" role="img">
+<title>Flutter GenUI SDK — Build AI-Generated UIs from Scratch (Beginner Tutorial)</title>
+<desc>Dark navy background. Left panel: tutorial badge, bold Flutter GenUI SDK title, syntax-highlighted Dart CatalogItem code snippet, tag pills. Right panel: three-step pipeline diagram — CatalogItem definition → Gemini A2UI stream → rendered Root Explorer widget.</desc>
+<defs>
+  <filter id="glow-gold" x="-20%" y="-20%" width="140%" height="140%">
+    <feGaussianBlur stdDeviation="3" result="blur"/>
+    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+</defs>
+<style>
+  .bg { fill: #0C1120; }
+  .gold { fill: #E8B430; }
+  .green { fill: #58D68D; }
+  .white { fill: #E6EDF3; }
+  .muted { fill: #7D8590; }
+  .dim-text { fill: #4D6380; }
+  .dim { fill: #1E2A3D; }
+  .panel { fill: #111827; }
+  .sans { font-family: 'IBM Plex Sans', 'Segoe UI', Arial, sans-serif; }
+  .mono { font-family: 'IBM Plex Mono', 'Fira Code', 'Courier New', monospace; }
+  .arabic { font-family: 'Amiri', 'Scheherazade New', 'Traditional Arabic', serif; }
+  .kw { fill: #C792EA; }
+  .ty { fill: #82AAFF; }
+  .str { fill: #C3E88D; }
+  .fn { fill: #FFCB6B; }
+  .param { fill: #F07178; }
+  .punc { fill: #89DDFF; }
+  .num { fill: #F78C6C; }
+  .cmt { fill: #546E7A; }
+  .var { fill: #E6EDF3; }
+</style>
+
+<!-- Background -->
+<rect width="1000" height="420" class="bg"/>
+
+<!-- Dot grid — left half only -->
+<g opacity="0.35" fill="#1A2640">
+  <circle cx="40" cy="40" r="1.5"/><circle cx="80" cy="40" r="1.5"/><circle cx="120" cy="40" r="1.5"/><circle cx="160" cy="40" r="1.5"/><circle cx="200" cy="40" r="1.5"/><circle cx="240" cy="40" r="1.5"/><circle cx="280" cy="40" r="1.5"/><circle cx="320" cy="40" r="1.5"/><circle cx="360" cy="40" r="1.5"/><circle cx="400" cy="40" r="1.5"/><circle cx="440" cy="40" r="1.5"/><circle cx="480" cy="40" r="1.5"/><circle cx="520" cy="40" r="1.5"/>
+  <circle cx="40" cy="80" r="1.5"/><circle cx="80" cy="80" r="1.5"/><circle cx="120" cy="80" r="1.5"/><circle cx="160" cy="80" r="1.5"/><circle cx="200" cy="80" r="1.5"/><circle cx="240" cy="80" r="1.5"/><circle cx="280" cy="80" r="1.5"/><circle cx="320" cy="80" r="1.5"/><circle cx="360" cy="80" r="1.5"/><circle cx="400" cy="80" r="1.5"/><circle cx="440" cy="80" r="1.5"/><circle cx="480" cy="80" r="1.5"/><circle cx="520" cy="80" r="1.5"/>
+  <circle cx="40" cy="120" r="1.5"/><circle cx="80" cy="120" r="1.5"/><circle cx="120" cy="120" r="1.5"/><circle cx="160" cy="120" r="1.5"/><circle cx="200" cy="120" r="1.5"/><circle cx="240" cy="120" r="1.5"/><circle cx="280" cy="120" r="1.5"/><circle cx="320" cy="120" r="1.5"/><circle cx="360" cy="120" r="1.5"/><circle cx="400" cy="120" r="1.5"/><circle cx="440" cy="120" r="1.5"/><circle cx="480" cy="120" r="1.5"/><circle cx="520" cy="120" r="1.5"/>
+  <circle cx="40" cy="160" r="1.5"/><circle cx="80" cy="160" r="1.5"/><circle cx="120" cy="160" r="1.5"/><circle cx="160" cy="160" r="1.5"/><circle cx="200" cy="160" r="1.5"/><circle cx="240" cy="160" r="1.5"/><circle cx="280" cy="160" r="1.5"/><circle cx="320" cy="160" r="1.5"/><circle cx="360" cy="160" r="1.5"/><circle cx="400" cy="160" r="1.5"/><circle cx="440" cy="160" r="1.5"/><circle cx="480" cy="160" r="1.5"/><circle cx="520" cy="160" r="1.5"/>
+  <circle cx="40" cy="200" r="1.5"/><circle cx="80" cy="200" r="1.5"/><circle cx="120" cy="200" r="1.5"/><circle cx="160" cy="200" r="1.5"/><circle cx="200" cy="200" r="1.5"/><circle cx="240" cy="200" r="1.5"/><circle cx="280" cy="200" r="1.5"/><circle cx="320" cy="200" r="1.5"/><circle cx="360" cy="200" r="1.5"/><circle cx="400" cy="200" r="1.5"/><circle cx="440" cy="200" r="1.5"/><circle cx="480" cy="200" r="1.5"/><circle cx="520" cy="200" r="1.5"/>
+  <circle cx="40" cy="240" r="1.5"/><circle cx="80" cy="240" r="1.5"/><circle cx="120" cy="240" r="1.5"/><circle cx="160" cy="240" r="1.5"/><circle cx="200" cy="240" r="1.5"/><circle cx="240" cy="240" r="1.5"/><circle cx="280" cy="240" r="1.5"/><circle cx="320" cy="240" r="1.5"/><circle cx="360" cy="240" r="1.5"/><circle cx="400" cy="240" r="1.5"/><circle cx="440" cy="240" r="1.5"/><circle cx="480" cy="240" r="1.5"/><circle cx="520" cy="240" r="1.5"/>
+  <circle cx="40" cy="280" r="1.5"/><circle cx="80" cy="280" r="1.5"/><circle cx="120" cy="280" r="1.5"/><circle cx="160" cy="280" r="1.5"/><circle cx="200" cy="280" r="1.5"/><circle cx="240" cy="280" r="1.5"/><circle cx="280" cy="280" r="1.5"/><circle cx="320" cy="280" r="1.5"/><circle cx="360" cy="280" r="1.5"/><circle cx="400" cy="280" r="1.5"/><circle cx="440" cy="280" r="1.5"/><circle cx="480" cy="280" r="1.5"/><circle cx="520" cy="280" r="1.5"/>
+  <circle cx="40" cy="320" r="1.5"/><circle cx="80" cy="320" r="1.5"/><circle cx="120" cy="320" r="1.5"/><circle cx="160" cy="320" r="1.5"/><circle cx="200" cy="320" r="1.5"/><circle cx="240" cy="320" r="1.5"/><circle cx="280" cy="320" r="1.5"/><circle cx="320" cy="320" r="1.5"/><circle cx="360" cy="320" r="1.5"/><circle cx="400" cy="320" r="1.5"/><circle cx="440" cy="320" r="1.5"/><circle cx="480" cy="320" r="1.5"/><circle cx="520" cy="320" r="1.5"/>
+  <circle cx="40" cy="360" r="1.5"/><circle cx="80" cy="360" r="1.5"/><circle cx="120" cy="360" r="1.5"/><circle cx="160" cy="360" r="1.5"/><circle cx="200" cy="360" r="1.5"/><circle cx="240" cy="360" r="1.5"/><circle cx="280" cy="360" r="1.5"/><circle cx="320" cy="360" r="1.5"/><circle cx="360" cy="360" r="1.5"/><circle cx="400" cy="360" r="1.5"/><circle cx="440" cy="360" r="1.5"/><circle cx="480" cy="360" r="1.5"/><circle cx="520" cy="360" r="1.5"/>
+  <circle cx="40" cy="400" r="1.5"/><circle cx="80" cy="400" r="1.5"/><circle cx="120" cy="400" r="1.5"/><circle cx="160" cy="400" r="1.5"/><circle cx="200" cy="400" r="1.5"/><circle cx="240" cy="400" r="1.5"/><circle cx="280" cy="400" r="1.5"/><circle cx="320" cy="400" r="1.5"/><circle cx="360" cy="400" r="1.5"/><circle cx="400" cy="400" r="1.5"/><circle cx="440" cy="400" r="1.5"/><circle cx="480" cy="400" r="1.5"/>
+</g>
+
+<!-- Panel divider -->
+<line x1="558" y1="0" x2="558" y2="420" stroke="#1E2A3D" stroke-width="1"/>
+
+<!-- ══ LEFT PANEL ══ -->
+
+<!-- Tutorial badge -->
+<rect x="48" y="34" width="146" height="22" rx="5" fill="#0A1F15" stroke="#58D68D" stroke-width="1"/>
+<text x="121" y="49" text-anchor="middle" class="sans" font-size="10" font-weight="700" fill="#58D68D">✦ BEGINNER TUTORIAL</text>
+
+<!-- Gold accent bar -->
+<rect x="48" y="68" width="4" height="46" fill="#E8B430" rx="2"/>
+
+<!-- Title -->
+<text x="63" y="97" class="sans" font-size="44" font-weight="700" fill="#E6EDF3">Flutter GenUI SDK</text>
+<text x="63" y="122" class="sans" font-size="16" fill="#E8B430">Build AI-Generated UIs from Scratch</text>
+
+<!-- Code block -->
+<rect x="48" y="142" width="490" height="218" rx="7" fill="#111827"/>
+<rect x="48" y="142" width="490" height="218" rx="7" fill="none" stroke="#1E2A3D" stroke-width="1"/>
+
+<!-- Terminal dots -->
+<circle cx="68" cy="158" r="4" fill="#FF5F57"/>
+<circle cx="82" cy="158" r="4" fill="#FEBC2E"/>
+<circle cx="96" cy="158" r="4" fill="#28C840"/>
+<text x="112" y="162" class="mono" font-size="10" fill="#3D5A80">catalog_item.dart</text>
+<line x1="48" y1="170" x2="538" y2="170" stroke="#1E2A3D" stroke-width="0.5"/>
+
+<!-- Code lines — syntax highlighted -->
+<!-- Line 1: final widget = CatalogItem( -->
+<text x="66" y="188" class="mono" font-size="11">
+  <tspan class="kw">final</tspan>
+  <tspan class="var"> widget </tspan>
+  <tspan class="punc">= </tspan>
+  <tspan class="ty">CatalogItem</tspan>
+  <tspan class="punc">(</tspan>
+</text>
+
+<!-- Line 2:   name: 'RootExplorer', -->
+<text x="66" y="204" class="mono" font-size="11">
+  <tspan class="var">  </tspan>
+  <tspan class="param">name</tspan>
+  <tspan class="punc">: </tspan>
+  <tspan class="str">'RootExplorer'</tspan>
+  <tspan class="punc">,</tspan>
+</text>
+
+<!-- Line 3:   dataSchema: S.object( -->
+<text x="66" y="220" class="mono" font-size="11">
+  <tspan class="param">  dataSchema</tspan>
+  <tspan class="punc">: </tspan>
+  <tspan class="ty">S</tspan>
+  <tspan class="punc">.</tspan>
+  <tspan class="fn">object</tspan>
+  <tspan class="punc">(</tspan>
+</text>
+
+<!-- Line 4:     properties: { -->
+<text x="66" y="236" class="mono" font-size="11">
+  <tspan class="param">    properties</tspan>
+  <tspan class="punc">: {</tspan>
+</text>
+
+<!-- Line 5:       'rootWord': S.string(), -->
+<text x="66" y="252" class="mono" font-size="11">
+  <tspan class="str">      'rootWord'</tspan>
+  <tspan class="punc">: </tspan>
+  <tspan class="ty">S</tspan>
+  <tspan class="punc">.</tspan>
+  <tspan class="fn">string</tspan>
+  <tspan class="punc">(),</tspan>
+</text>
+
+<!-- Line 6:       'family': S.list( -->
+<text x="66" y="268" class="mono" font-size="11">
+  <tspan class="str">      'family'</tspan>
+  <tspan class="punc">: </tspan>
+  <tspan class="ty">S</tspan>
+  <tspan class="punc">.</tspan>
+  <tspan class="fn">list</tspan>
+  <tspan class="punc">(</tspan>
+</text>
+
+<!-- Line 7:         items: S.object(...)), -->
+<text x="66" y="284" class="mono" font-size="11">
+  <tspan class="param">        items</tspan>
+  <tspan class="punc">: </tspan>
+  <tspan class="ty">S</tspan>
+  <tspan class="punc">.</tspan>
+  <tspan class="fn">object</tspan>
+  <tspan class="punc">(...)),</tspan>
+</text>
+
+<!-- Line 8:     }, -->
+<text x="66" y="300" class="mono" font-size="11">
+  <tspan class="param">    required</tspan>
+  <tspan class="punc">: [</tspan>
+  <tspan class="str">'rootWord'</tspan>
+  <tspan class="punc">, </tspan>
+  <tspan class="str">'family'</tspan>
+  <tspan class="punc">],</tspan>
+</text>
+
+<!-- Line 9:   ), -->
+<text x="66" y="316" class="mono" font-size="11">
+  <tspan class="punc">  ),</tspan>
+</text>
+
+<!-- Line 10:   widgetBuilder: (ctx) => -->
+<text x="66" y="332" class="mono" font-size="11">
+  <tspan class="param">  widgetBuilder</tspan>
+  <tspan class="punc">: (</tspan>
+  <tspan class="var">ctx</tspan>
+  <tspan class="punc">) </tspan>
+  <tspan class="punc">=></tspan>
+</text>
+
+<!-- Line 11:     RootDiagram(data: ctx.data), -->
+<text x="66" y="348" class="mono" font-size="11">
+  <tspan class="ty">    RootDiagram</tspan>
+  <tspan class="punc">(</tspan>
+  <tspan class="param">data</tspan>
+  <tspan class="punc">: </tspan>
+  <tspan class="var">ctx</tspan>
+  <tspan class="punc">.</tspan>
+  <tspan class="var">data</tspan>
+  <tspan class="punc">),</tspan>
+</text>
+
+<!-- Line 12: ); -->
+<text x="66" y="364" class="mono" font-size="11">
+  <tspan class="punc">);</tspan>
+</text>
+
+<!-- Tag pills -->
+<rect x="48" y="374" width="96" height="22" rx="5" fill="#1A1F00" stroke="#E8B430" stroke-width="1"/>
+<text x="96" y="389" text-anchor="middle" class="mono" font-size="10" font-weight="600" fill="#E8B430">CatalogItem</text>
+
+<rect x="152" y="374" width="116" height="22" rx="5" fill="#1E2A3D" stroke="#7D8590" stroke-width="1"/>
+<text x="210" y="389" text-anchor="middle" class="mono" font-size="10" fill="#7D8590">SurfaceController</text>
+
+<rect x="276" y="374" width="84" height="22" rx="5" fill="#0A1420" stroke="#82AAFF" stroke-width="1"/>
+<text x="318" y="389" text-anchor="middle" class="mono" font-size="10" fill="#82AAFF">A2UI v0.9</text>
+
+<!-- Author -->
+<text x="50" y="410" class="sans" font-size="12" fill="#7D8590">Sayed Ali Alkamel  ·  Google Developer Expert, Flutter</text>
+
+<!-- ══ RIGHT PANEL: Three-step pipeline ══ -->
+
+<!-- Panel header -->
+<text x="780" y="46" text-anchor="middle" class="sans" font-size="11" font-weight="600" fill="#58D68D">◇  GENERATED AT RUNTIME  ◇</text>
+
+<!-- ─── Step boxes ─── -->
+<!-- Step 1: Define (CatalogItem) — top-left of right panel -->
+<rect x="574" y="62" width="138" height="112" rx="7" fill="#111827" stroke="#1E2A3D" stroke-width="1"/>
+<text x="643" y="80" text-anchor="middle" class="sans" font-size="9" font-weight="600" fill="#7D8590">① DEFINE</text>
+<line x1="574" y1="86" x2="712" y2="86" stroke="#1E2A3D" stroke-width="0.5"/>
+<text x="590" y="102" class="mono" font-size="9" fill="#C792EA">final</text>
+<text x="624" y="102" class="mono" font-size="9" fill="#E6EDF3"> widget =</text>
+<text x="590" y="116" class="mono" font-size="9" fill="#82AAFF">CatalogItem</text>
+<text x="668" y="116" class="mono" font-size="9" fill="#89DDFF">(</text>
+<text x="590" y="130" class="mono" font-size="9" fill="#F07178">  name</text>
+<text x="617" y="130" class="mono" font-size="9" fill="#89DDFF">: </text>
+<text x="625" y="130" class="mono" font-size="9" fill="#C3E88D">'Root'</text>
+<text x="590" y="144" class="mono" font-size="9" fill="#F07178">  schema</text>
+<text x="625" y="144" class="mono" font-size="9" fill="#89DDFF">: ...</text>
+<text x="590" y="158" class="mono" font-size="9" fill="#89DDFF">);</text>
+
+<!-- Arrow 1 → 2 -->
+<line x1="718" y1="118" x2="756" y2="118" stroke="#E8B430" stroke-width="1.5" stroke-dasharray="3,2"/>
+<polygon points="756,114 764,118 756,122" fill="#E8B430"/>
+<text x="737" y="113" text-anchor="middle" class="sans" font-size="8" fill="#7D8590">catalog</text>
+<text x="737" y="123" text-anchor="middle" class="sans" font-size="8" fill="#7D8590">→ prompt</text>
+
+<!-- Step 2: Compose (Gemini A2UI) — top-right of right panel -->
+<rect x="766" y="62" width="138" height="112" rx="7" fill="#111827" stroke="#1E2A3D" stroke-width="1"/>
+<text x="835" y="80" text-anchor="middle" class="sans" font-size="9" font-weight="600" fill="#7D8590">② COMPOSE</text>
+<line x1="766" y1="86" x2="904" y2="86" stroke="#1E2A3D" stroke-width="0.5"/>
+<text x="774" y="102" class="mono" font-size="8.5" fill="#89DDFF">{</text>
+<text x="774" y="114" class="mono" font-size="8.5" fill="#7D8590">  "type":</text>
+<text x="774" y="126" class="mono" font-size="8.5" fill="#C3E88D">    "createSurface"</text>
+<text x="774" y="138" class="mono" font-size="8.5" fill="#7D8590">  "component":</text>
+<text x="774" y="150" class="mono" font-size="8.5" fill="#C3E88D">    "RootExplorer"</text>
+<text x="774" y="162" class="mono" font-size="8.5" fill="#89DDFF">}</text>
+<!-- Gemini spark label -->
+<text x="835" y="174" text-anchor="middle" class="sans" font-size="8" fill="#E8B430">✦ Gemini · A2UI v0.9</text>
+
+<!-- Arrow 2 → 3 (vertical, center) -->
+<line x1="780" y1="180" x2="780" y2="216" stroke="#E8B430" stroke-width="1.5" stroke-dasharray="3,2"/>
+<polygon points="776,216 780,224 784,216" fill="#E8B430"/>
+<text x="800" y="198" class="sans" font-size="8" fill="#7D8590">GenUI SDK renders</text>
+
+<!-- Step 3: Render (Root Explorer diagram) — bottom centered -->
+<!-- Outer guide ring -->
+<circle cx="780" cy="320" r="82" fill="none" stroke="#1A2640" stroke-width="1.5"/>
+
+<!-- Spokes -->
+<line x1="780" y1="283" x2="780" y2="244" stroke="#E8B430" stroke-width="1.2" opacity="0.8"/>
+<line x1="825" y1="348" x2="870" y2="370" stroke="#58D68D" stroke-width="1" opacity="0.6"/>
+<line x1="822" y1="293" x2="862" y2="268" stroke="#58D68D" stroke-width="1" opacity="0.5"/>
+<line x1="738" y1="293" x2="698" y2="268" stroke="#58D68D" stroke-width="1" opacity="0.4"/>
+<line x1="735" y1="348" x2="693" y2="370" stroke="#58D68D" stroke-width="1" opacity="0.4"/>
+
+<!-- Centre node -->
+<circle cx="780" cy="320" r="38" fill="#111827" stroke="#E8B430" stroke-width="2"/>
+<text x="780" y="315" text-anchor="middle" class="arabic" font-size="13" fill="#E8B430">ك - ت - ب</text>
+<text x="780" y="329" text-anchor="middle" class="sans" font-size="9" fill="#7D8590">to write</text>
+<text x="780" y="340" text-anchor="middle" class="sans" font-size="7" fill="#3D5A80">root</text>
+
+<!-- Top node: كَتَبَ (gold, highlighted) -->
+<rect x="748" y="226" width="64" height="28" rx="7" fill="#1A1F00" stroke="#E8B430" stroke-width="2"/>
+<text x="780" y="237" text-anchor="middle" class="arabic" font-size="13" fill="#E8B430">كَتَبَ</text>
+<text x="780" y="248" text-anchor="middle" class="sans" font-size="7" fill="#C49A20">he wrote</text>
+
+<!-- Top-right node: مَكْتُوب (green, active) -->
+<rect x="847" y="252" width="68" height="28" rx="7" fill="#0A1F15" stroke="#58D68D" stroke-width="1.5"/>
+<text x="881" y="263" text-anchor="middle" class="arabic" font-size="12" fill="#E6EDF3">مَكْتُوب</text>
+<text x="881" y="274" text-anchor="middle" class="sans" font-size="7" fill="#58D68D">written</text>
+
+<!-- Bottom-right node: مَكْتَب (dim) -->
+<rect x="854" y="360" width="58" height="26" rx="6" fill="#111827" stroke="#1E2A3D" stroke-width="1"/>
+<text x="883" y="378" text-anchor="middle" class="arabic" font-size="11" fill="#4D6380">مَكْتَب</text>
+
+<!-- Bottom-left node: كَاتِب (dim) -->
+<rect x="688" y="360" width="58" height="26" rx="6" fill="#111827" stroke="#1E2A3D" stroke-width="1"/>
+<text x="717" y="378" text-anchor="middle" class="arabic" font-size="11" fill="#4D6380">كَاتِب</text>
+
+<!-- Top-left node: كِتَاب (dim) -->
+<rect x="672" y="252" width="56" height="28" rx="7" fill="#111827" stroke="#1E2A3D" stroke-width="1"/>
+<text x="700" y="270" text-anchor="middle" class="arabic" font-size="12" fill="#4D6380">كِتَاب</text>
+
+<!-- "Rendered by widgetBuilder" badge -->
+<rect x="580" y="404" width="386" height="18" rx="5" fill="#0C1120"/>
+<text x="773" y="416" text-anchor="middle" class="sans" font-size="10" fill="#3D5A80">widgetBuilder renders this ↑  ·  Surface(host: controller, surfaceId: 'turn_1')</text>
+
+<!-- ③ RENDER label under diagram -->
+<text x="780" y="230" text-anchor="middle" class="sans" font-size="9" font-weight="600" fill="#7D8590">③ RENDER</text>
+
+</svg>

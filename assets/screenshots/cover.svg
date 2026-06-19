@@ -1,0 +1,127 @@
+<svg viewBox="0 0 1000 420" width="1000" height="420" xmlns="http://www.w3.org/2000/svg" role="img">
+<title>Kalaam — An Arabic tutor whose UI Gemini assembles at runtime</title>
+<desc>Dark navy background. Left side: bold white Kalaam title, Arabic calligraphic subtitle in gold, tag pills for Flutter Dart GenUI Gemini, JSON code snippet. Right side: stylised Root System radial diagram with gold centre node and green satellite nodes.</desc>
+<style>
+  .bg { fill: #0C1120; }
+  .gold { fill: #E8B430; }
+  .green { fill: #58D68D; }
+  .white { fill: #E6EDF3; }
+  .muted { fill: #7D8590; }
+  .dim { fill: #1E2A3D; }
+  .dot-grid { fill: #1A2640; }
+  .panel-dark { fill: #111827; }
+  .sans { font-family: 'IBM Plex Sans', 'Segoe UI', Arial, sans-serif; }
+  .mono { font-family: 'IBM Plex Mono', 'Fira Code', 'Courier New', monospace; }
+  .arabic { font-family: 'Amiri', 'Scheherazade New', 'Traditional Arabic', serif; }
+</style>
+
+<!-- Background -->
+<rect width="1000" height="420" class="bg"/>
+
+<!-- Dot grid pattern -->
+<g opacity="0.45" class="dot-grid">
+  <circle cx="40" cy="40" r="1.5"/><circle cx="80" cy="40" r="1.5"/><circle cx="120" cy="40" r="1.5"/><circle cx="160" cy="40" r="1.5"/><circle cx="200" cy="40" r="1.5"/><circle cx="240" cy="40" r="1.5"/><circle cx="280" cy="40" r="1.5"/><circle cx="320" cy="40" r="1.5"/><circle cx="360" cy="40" r="1.5"/><circle cx="400" cy="40" r="1.5"/><circle cx="440" cy="40" r="1.5"/><circle cx="480" cy="40" r="1.5"/><circle cx="520" cy="40" r="1.5"/>
+  <circle cx="40" cy="80" r="1.5"/><circle cx="80" cy="80" r="1.5"/><circle cx="120" cy="80" r="1.5"/><circle cx="160" cy="80" r="1.5"/><circle cx="200" cy="80" r="1.5"/><circle cx="240" cy="80" r="1.5"/><circle cx="280" cy="80" r="1.5"/><circle cx="320" cy="80" r="1.5"/><circle cx="360" cy="80" r="1.5"/><circle cx="400" cy="80" r="1.5"/><circle cx="440" cy="80" r="1.5"/><circle cx="480" cy="80" r="1.5"/><circle cx="520" cy="80" r="1.5"/>
+  <circle cx="40" cy="120" r="1.5"/><circle cx="80" cy="120" r="1.5"/><circle cx="120" cy="120" r="1.5"/><circle cx="160" cy="120" r="1.5"/><circle cx="200" cy="120" r="1.5"/><circle cx="240" cy="120" r="1.5"/><circle cx="280" cy="120" r="1.5"/><circle cx="320" cy="120" r="1.5"/><circle cx="360" cy="120" r="1.5"/><circle cx="400" cy="120" r="1.5"/><circle cx="440" cy="120" r="1.5"/><circle cx="480" cy="120" r="1.5"/><circle cx="520" cy="120" r="1.5"/>
+  <circle cx="40" cy="160" r="1.5"/><circle cx="80" cy="160" r="1.5"/><circle cx="120" cy="160" r="1.5"/><circle cx="160" cy="160" r="1.5"/><circle cx="200" cy="160" r="1.5"/><circle cx="240" cy="160" r="1.5"/><circle cx="280" cy="160" r="1.5"/><circle cx="320" cy="160" r="1.5"/><circle cx="360" cy="160" r="1.5"/><circle cx="400" cy="160" r="1.5"/><circle cx="440" cy="160" r="1.5"/><circle cx="480" cy="160" r="1.5"/><circle cx="520" cy="160" r="1.5"/>
+  <circle cx="40" cy="200" r="1.5"/><circle cx="80" cy="200" r="1.5"/><circle cx="120" cy="200" r="1.5"/><circle cx="160" cy="200" r="1.5"/><circle cx="200" cy="200" r="1.5"/><circle cx="240" cy="200" r="1.5"/><circle cx="280" cy="200" r="1.5"/><circle cx="320" cy="200" r="1.5"/><circle cx="360" cy="200" r="1.5"/><circle cx="400" cy="200" r="1.5"/><circle cx="440" cy="200" r="1.5"/><circle cx="480" cy="200" r="1.5"/><circle cx="520" cy="200" r="1.5"/>
+  <circle cx="40" cy="240" r="1.5"/><circle cx="80" cy="240" r="1.5"/><circle cx="120" cy="240" r="1.5"/><circle cx="160" cy="240" r="1.5"/><circle cx="200" cy="240" r="1.5"/><circle cx="240" cy="240" r="1.5"/><circle cx="280" cy="240" r="1.5"/><circle cx="320" cy="240" r="1.5"/><circle cx="360" cy="240" r="1.5"/><circle cx="400" cy="240" r="1.5"/><circle cx="440" cy="240" r="1.5"/><circle cx="480" cy="240" r="1.5"/><circle cx="520" cy="240" r="1.5"/>
+  <circle cx="40" cy="280" r="1.5"/><circle cx="80" cy="280" r="1.5"/><circle cx="120" cy="280" r="1.5"/><circle cx="160" cy="280" r="1.5"/><circle cx="200" cy="280" r="1.5"/><circle cx="240" cy="280" r="1.5"/><circle cx="280" cy="280" r="1.5"/><circle cx="320" cy="280" r="1.5"/><circle cx="360" cy="280" r="1.5"/><circle cx="400" cy="280" r="1.5"/><circle cx="440" cy="280" r="1.5"/><circle cx="480" cy="280" r="1.5"/><circle cx="520" cy="280" r="1.5"/>
+  <circle cx="40" cy="320" r="1.5"/><circle cx="80" cy="320" r="1.5"/><circle cx="120" cy="320" r="1.5"/><circle cx="160" cy="320" r="1.5"/><circle cx="200" cy="320" r="1.5"/><circle cx="240" cy="320" r="1.5"/><circle cx="280" cy="320" r="1.5"/><circle cx="320" cy="320" r="1.5"/><circle cx="360" cy="320" r="1.5"/><circle cx="400" cy="320" r="1.5"/><circle cx="440" cy="320" r="1.5"/><circle cx="480" cy="320" r="1.5"/><circle cx="520" cy="320" r="1.5"/>
+  <circle cx="40" cy="360" r="1.5"/><circle cx="80" cy="360" r="1.5"/><circle cx="120" cy="360" r="1.5"/><circle cx="160" cy="360" r="1.5"/><circle cx="200" cy="360" r="1.5"/><circle cx="240" cy="360" r="1.5"/><circle cx="280" cy="360" r="1.5"/><circle cx="320" cy="360" r="1.5"/><circle cx="360" cy="360" r="1.5"/><circle cx="400" cy="360" r="1.5"/><circle cx="440" cy="360" r="1.5"/><circle cx="480" cy="360" r="1.5"/><circle cx="520" cy="360" r="1.5"/>
+  <circle cx="40" cy="400" r="1.5"/><circle cx="80" cy="400" r="1.5"/><circle cx="120" cy="400" r="1.5"/><circle cx="160" cy="400" r="1.5"/><circle cx="200" cy="400" r="1.5"/><circle cx="240" cy="400" r="1.5"/><circle cx="280" cy="400" r="1.5"/><circle cx="320" cy="400" r="1.5"/><circle cx="360" cy="400" r="1.5"/><circle cx="400" cy="400" r="1.5"/><circle cx="440" cy="400" r="1.5"/><circle cx="480" cy="400" r="1.5"/><circle cx="520" cy="400" r="1.5"/>
+</g>
+
+<!-- Panel divider -->
+<line x1="560" y1="0" x2="560" y2="420" stroke="#1E2A3D" stroke-width="1"/>
+
+<!-- ══ LEFT PANEL ══ -->
+
+<!-- Gold accent bar -->
+<rect x="48" y="62" width="4" height="56" fill="#E8B430" rx="2"/>
+
+<!-- Title -->
+<text x="66" y="108" class="sans" font-size="68" font-weight="700" fill="#E6EDF3">Kalaam</text>
+
+<!-- Arabic subtitle -->
+<text x="70" y="152" class="arabic" font-size="38" fill="#E8B430">كلام</text>
+
+<!-- Tagline -->
+<text x="68" y="188" class="sans" font-size="17" fill="#7D8590">An Arabic tutor whose UI</text>
+<text x="68" y="212" class="sans" font-size="17" fill="#7D8590">Gemini assembles at runtime.</text>
+
+<!-- Tag pills -->
+<rect x="68" y="238" width="78" height="26" rx="5" fill="#1E2A3D" stroke="#E8B430" stroke-width="1"/>
+<text x="107" y="256" text-anchor="middle" class="sans" font-size="12" font-weight="600" fill="#E8B430">Flutter</text>
+
+<rect x="155" y="238" width="54" height="26" rx="5" fill="#1E2A3D" stroke="#7D8590" stroke-width="1"/>
+<text x="182" y="256" text-anchor="middle" class="sans" font-size="12" fill="#7D8590">Dart</text>
+
+<rect x="218" y="238" width="60" height="26" rx="5" fill="#1E2A3D" stroke="#58D68D" stroke-width="1"/>
+<text x="248" y="256" text-anchor="middle" class="sans" font-size="12" fill="#58D68D">GenUI</text>
+
+<rect x="287" y="238" width="70" height="26" rx="5" fill="#1E2A3D" stroke="#7D8590" stroke-width="1"/>
+<text x="322" y="256" text-anchor="middle" class="sans" font-size="12" fill="#7D8590">Gemini</text>
+
+<!-- JSON code block -->
+<rect x="68" y="282" width="450" height="52" rx="6" fill="#111827"/>
+<text x="82" y="303" class="mono" font-size="11" fill="#58D68D">createSurface</text>
+<text x="186" y="303" class="mono" font-size="11" fill="#3D5A80"> → RootExplorer</text>
+<text x="82" y="323" class="mono" font-size="11" fill="#7D8590">  rootWord: </text>
+<text x="164" y="323" class="mono" font-size="11" fill="#E8B430">"ش-ر-ب"</text>
+<text x="232" y="323" class="mono" font-size="11" fill="#7D8590">  pattern: </text>
+<text x="308" y="323" class="mono" font-size="11" fill="#58D68D">"مَفْعُول"</text>
+
+<!-- Author & repo -->
+<text x="68" y="372" class="sans" font-size="13" fill="#7D8590">Sayed Ali Alkamel  ·  Google Developer Expert, Flutter</text>
+<text x="68" y="396" class="mono" font-size="11" fill="#3D5A80">github.com/sayed3li97/kalaam</text>
+
+<!-- ══ RIGHT PANEL: Root Diagram ══ -->
+
+<!-- Outer guide ring -->
+<circle cx="780" cy="210" r="135" fill="none" stroke="#1E2A3D" stroke-width="1.5"/>
+
+<!-- Spokes -->
+<line x1="780" y1="164" x2="780" y2="90" stroke="#E8B430" stroke-width="1.2" opacity="0.7"/>
+<line x1="835" y1="248" x2="904" y2="284" stroke="#58D68D" stroke-width="1" opacity="0.55"/>
+<line x1="835" y1="174" x2="900" y2="148" stroke="#58D68D" stroke-width="1" opacity="0.45"/>
+<line x1="725" y1="174" x2="660" y2="148" stroke="#58D68D" stroke-width="1" opacity="0.35"/>
+<line x1="725" y1="248" x2="660" y2="282" stroke="#58D68D" stroke-width="1" opacity="0.35"/>
+
+<!-- Centre node -->
+<circle cx="780" cy="210" r="48" fill="#111827" stroke="#E8B430" stroke-width="2"/>
+<text x="780" y="203" text-anchor="middle" class="arabic" font-size="15" fill="#E8B430">ش - ر - ب</text>
+<text x="780" y="220" text-anchor="middle" class="sans" font-size="10" fill="#7D8590">to drink</text>
+<text x="780" y="234" text-anchor="middle" class="sans" font-size="8" fill="#3D5A80">root</text>
+
+<!-- Top node: شَرِبَ (highlighted — gold, expanded) -->
+<rect x="736" y="52" width="88" height="40" rx="9" fill="#1A1F00" stroke="#E8B430" stroke-width="2"/>
+<text x="780" y="68" text-anchor="middle" class="arabic" font-size="16" fill="#E8B430">شَرِبَ</text>
+<text x="780" y="83" text-anchor="middle" class="sans" font-size="9" fill="#C49A20">he drank · فَعَلَ</text>
+
+<!-- Top-right node: مَشْرُوب (green, active) -->
+<rect x="880" y="118" width="90" height="40" rx="9" fill="#0A1F15" stroke="#58D68D" stroke-width="1.5"/>
+<text x="925" y="134" text-anchor="middle" class="arabic" font-size="14" fill="#E6EDF3">مَشْرُوب</text>
+<text x="925" y="149" text-anchor="middle" class="sans" font-size="9" fill="#58D68D">a drink · مَفْعُول</text>
+
+<!-- Bottom-right node: مَشْرَب (dim) -->
+<rect x="886" y="262" width="82" height="34" rx="8" fill="#111827" stroke="#1E2A3D" stroke-width="1"/>
+<text x="927" y="284" text-anchor="middle" class="arabic" font-size="13" fill="#4D6380">مَشْرَب</text>
+
+<!-- Bottom-left node: شَارِب (dim) -->
+<rect x="632" y="262" width="76" height="34" rx="8" fill="#111827" stroke="#1E2A3D" stroke-width="1"/>
+<text x="670" y="284" text-anchor="middle" class="arabic" font-size="13" fill="#4D6380">شَارِب</text>
+
+<!-- Top-left node: مُشْرِب (dim) -->
+<rect x="630" y="118" width="78" height="34" rx="8" fill="#111827" stroke="#1E2A3D" stroke-width="1"/>
+<text x="669" y="140" text-anchor="middle" class="arabic" font-size="13" fill="#4D6380">مُشْرِب</text>
+
+<!-- Tap/expand indicator on top-right node -->
+<circle cx="968" cy="120" r="10" fill="#58D68D"/>
+<text x="968" y="125" text-anchor="middle" class="sans" font-size="11" font-weight="700" fill="#0C1120">→</text>
+
+<!-- Caption -->
+<text x="780" y="392" text-anchor="middle" class="sans" font-size="12" fill="#3D5A80">Root System Explorer</text>
+<text x="780" y="410" text-anchor="middle" class="arabic" font-size="13" fill="#5A6A80">وزن · morphological pattern</text>
+
+</svg>
