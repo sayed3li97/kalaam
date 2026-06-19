@@ -1,6 +1,6 @@
 ---
 title: "Flutter GenUI SDK: Build AI-Generated UIs from Scratch (Complete Beginner Tutorial 2026)"
-published: true
+published: false
 description: "Step-by-step beginner tutorial: build real-time AI-generated Flutter widget trees using the GenUI SDK, Gemini, and custom CatalogItems. No prior AI experience needed."
 tags: flutter, dart, beginners, ai
 series: Flutter GenUI SDK
@@ -133,7 +133,7 @@ Every interaction in a GenUI app follows the same loop:
 
 Every API call you will make maps to one step in this loop. Keep the cycle in mind as you read the sections below.
 
-```
+```plaintext
 User input
     │
     ▼
@@ -190,7 +190,7 @@ Run `flutter pub get`.
 
 Run `flutterfire configure` and follow the prompts. It generates `lib/firebase_options.dart`. This file contains your app's credentials and must never be committed. Add these lines to `.gitignore` right now:
 
-```
+```plaintext
 lib/firebase_options.dart
 android/app/google-services.json
 ios/Runner/GoogleService-Info.plist
